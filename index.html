@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Contato</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  
+  <body>
+   <div class="container">
+    <img src="assets/Imagem do WhatsApp de 2025-02-21 à(s) 01.06.58_4b44b629.jpg" alt="Logo Principal" class="logo">
+   
+    <div>
+      <form
+        action="https://formsubmit.co/kaio@mrfibras.com.br"
+        method="POST"
+        enctype="multipart/form-data"
+        onsubmit="return validateForm()"
+
+      >
+        <label for="name">Colaborador:</label>
+        <input type="text" id="name" name="Nome" required />
+
+        <label for="itemType">Referente. Ex:(Combustível, almoço e etc).</label>
+        <input type="text" id="itemType" name="Referente" onchange="checkReferente()" />
+
+        <label for="itemType2">Dias trabalhados:</label>
+        <input type="number" id="itemType2" name="Dias Trabalhado"/>
+
+        <label for="photo">Comprovante:</label>
+        <input type="file" id="photo" name="Comprovante" accept="image/*" />
+
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+
+
+<script>
+  function checkReferente() {
+    var referenteValue = document.getElementById('itemType').value;
+    var photoField = document.getElementById('photo');
+
+    if (referenteValue.trim() !== "") {
+      photoField.setAttribute("required", "required");
+    } else {
+      photoField.removeAttribute("required");
+    }
+  }
+
+  function validateForm() {
+    var referenteValue = document.getElementById('itemType').value;
+    var photoField = document.getElementById('photo');
+
+    if (referenteValue.trim() !== "" && !photoField.value) {
+      alert("Por favor, carregue um comprovante.");
+      return false; // Impede o envio do formulário
+    }
+    return true; // Permite o envio do formulário
+  }
+</script>
+
+
+    <footer>Desenvolvido por KaioArth <img src="assets/logo-octocat.svg" alt="gatinho de toca"></footer>
+
+   
+  </body>
+</html>
