@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulário de Contato</title>
+    <title>ControleMRFibras</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   
@@ -13,11 +13,10 @@
    
     <div>
       <form
-        action="https://formsubmit.co/"
+        action="https://formsubmit.co/kaio@mrfibras.com.br"
         method="POST"
         enctype="multipart/form-data"
         onsubmit="return validateForm()"
-
       >
         <label for="name">Colaborador:</label>
         <input type="text" id="name" name="Nome" required />
@@ -35,34 +34,11 @@
       </form>
     </div>
 
+    <footer>
+      Desenvolvido por KaioArth <img src="assets/logo-octocat.svg" alt="gatinho de toca">
+      <a href="https://github.com/kaioarth" target="_blank">my github</a>
+    </footer>
 
-<script>
-  function checkReferente() {
-    var referenteValue = document.getElementById('itemType').value;
-    var photoField = document.getElementById('photo');
-
-    if (referenteValue.trim() !== "") {
-      photoField.setAttribute("required", "required");
-    } else {
-      photoField.removeAttribute("required");
-    }
-  }
-
-  function validateForm() {
-    var referenteValue = document.getElementById('itemType').value;
-    var photoField = document.getElementById('photo');
-
-    if (referenteValue.trim() !== "" && !photoField.value) {
-      alert("Por favor, carregue um comprovante.");
-      return false; // Impede o envio do formulário
-    }
-    return true; // Permite o envio do formulário
-  }
-</script>
-
-
-    <footer>Desenvolvido por KaioArth <img src="assets/logo-octocat.svg" alt="gatinho de toca" > <a href="https://github.com/kaioarth" target="_blank"> my github </a></footer>
-
-   
+    <script src="scripts.js"></script>
   </body>
 </html>
